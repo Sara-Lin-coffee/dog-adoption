@@ -125,6 +125,11 @@ box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
   transform-origin: top;
 }
 
+.nav-toggle{
+  /*positioning*/
+  display: none;
+}
+
 .nav-item{
   /*block*/
   margin: 1.4rem 0;
@@ -139,6 +144,50 @@ box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
   color: #267b98;
 }
 
+.navbar-toggle-label {
+  /*positioning*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 7.5%;
+
+  display: flex;
+  align-items: center;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+  /*content*/
+  height: 3px;
+  width: 30px;
+  background: #267b98;
+}
+
+.hamburger{
+/*positioning*/
+position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  /*positioning*/
+  position: absolute;
+  left: 0;
+  /*content*/
+  content: " "
+}
+
+.hamburger::before{
+  /*positioning*/
+  bottom: 8px;
+}
+
+.hamburger::after{
+  /*positioning*/
+  top: 8px;
+}
+
 /*==animation==*/
 .nav-toggle:checked ~.nav{
   /*content*/
@@ -146,8 +195,11 @@ box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
 .nav-toggle:checked ~.nav .nav-item{
+  /*content*/
   opacity: 1;
 }
+
+
 
 /********* 電腦版樣式 *********/
 @media screen and (min-width: 768px) {
