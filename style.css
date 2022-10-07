@@ -84,15 +84,6 @@ a {
   background-repeat: no-repeat;
 }
 
-/********* 電腦版樣式 *********/
-@media screen and (min-width: 768px) {
-  .action {
-    /*content*/
-    font-size: 1.2rem;
-    padding: 0.75rem 2rem;
-  }
-}
-
 
 /*********Main Header*********/
 
@@ -109,7 +100,6 @@ background: #ffffff;
 -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
 -moz-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
 box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
-
 }
 
 .navbar-brand{
@@ -128,15 +118,42 @@ box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
   width: 100%;
   /*content*/
   background: #ffffff;
-  border: 1px solid grey;
+  /*animation*/
+  transition: transform .2s ease-out;
+  
+  transform: scale(1, 0);
+  transform-origin: top;
 }
 
 .nav-item{
   /*block*/
-  margin: 1.4rem 0
+  margin: 1.4rem 0;
+  /*content*/
+  opacity: 0;
+  /*animation*/
+  transition: opacity 0.2s ease-out 0.15s;
 }
 
 .nav-link{
   /*content*/
   color: #267b98;
+}
+
+/*==animation==*/
+.nav-toggle:checked ~.nav{
+  /*content*/
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~.nav .nav-item{
+  opacity: 1;
+}
+
+/********* 電腦版樣式 *********/
+@media screen and (min-width: 768px) {
+  .action {
+    /*content*/
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+  }
 }
