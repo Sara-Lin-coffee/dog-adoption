@@ -132,7 +132,7 @@ box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
 
 .nav-item{
   /*block*/
-  margin: 1.4rem 0;
+  margin: 1.4rem;
   /*content*/
   opacity: 0;
   /*animation*/
@@ -200,12 +200,51 @@ position: relative;
 }
 
 
-
 /********* 電腦版樣式 *********/
 @media screen and (min-width: 768px) {
   .action {
     /*content*/
     font-size: 1.2rem;
     padding: 0.75rem 2rem;
+  }
+
+  .navbar-toggle-label{
+    /*positioning*/
+    display: none;
+  }
+
+  .nav{
+    all: unset;
+  }
+
+  .nav-item {
+    /*block*/
+    margin: 0;
+    /*content*/
+    opacity: 1;
+  }
+
+  header{
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .navbar-brand{
+    grid-column: 2/3;
+  }
+
+  .nav{
+    grid-column: 3/4;
+  }
+
+  .nav-list{
+    /*positioning*/
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: end;
+    grid-gap: 2rem;
+    /*block*/
+    height: 100%;
   }
 }
